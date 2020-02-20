@@ -2,7 +2,7 @@ FROM balenalib/raspberrypi3
 
 ARG opencv_version=4.0.0
 
-RUN apt-get -q update
+RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get install -y \
 build-essential \
