@@ -2,7 +2,9 @@ FROM balenalib/raspberrypi3
 
 ARG opencv_version=4.0.0
 
-RUN apt-get -q update && apt-get -y upgrade && apt-get install -y \
+RUN apt-get -q update
+RUN apt-get -y upgrade
+RUN apt-get install -y \
 build-essential \
 git \
 cmake \
@@ -26,7 +28,8 @@ python3-dev \
 python3-setuptools \
 imagemagick \
 shellcheck \
-supervisor && apt-get clean && rm -rf /var/lib/apt/lists/*
+supervisor
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install pip
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py && rm get-pip.py
