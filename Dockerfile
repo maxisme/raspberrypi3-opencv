@@ -1,4 +1,4 @@
-FROM balenalib/raspberrypi3
+FROM balenalib/raspberrypi3-debian:latest
 
 ARG opencv_version=4.0.0
 
